@@ -10,6 +10,9 @@ AGENDA
 4. Let's Talk About Classes!
 5. Next time: Who's bringing the cake and what are we doing?
 
+// Check out Niklas mega badass Convenience class system: 
+// https://github.com/salkin-mada/Convenience
+
 */
 
 /*****************************
@@ -67,6 +70,27 @@ Ndef(\noiz, {|freq=34|
 Ndef(\noiz).gui;
 )
 
+TempoClock.default.tempo=1;
+
+(
+	Pdef(\hello,
+		Pbind(
+			\dur, 0.25,
+			\degree, Pseq([0,2,4,5],inf),
+			\tempo, Pwhite(0.5,1.0)
+		)
+	).play;
+
+	Pdef(\hello2,
+		Pbind(
+			\dur, 0.125,
+			\degree, Pseq([0,2,4,5],inf),
+			\octave, 6
+		)
+	).play;
+
+)
+
 /*****************************
 			CLASSES
 *****************************/
@@ -75,10 +99,24 @@ Ndef(\noiz).gui;
 // Simple example: PolyBuf https://github.com/madskjeldgaard/PolyBuf/blob/master/PolyBuf.sc
 
 // Where to put classes
+Platform.userExtensionDir;
 Platform.userExtensionDir.openOS;
+"/home".openOS
 
 // Class extensions
-// Pseudo ugens
+"Hello".class; // See the class with .class
+"Hello".postln;
+"Hello".shout;
+
+a = "yoyo";
+
+m = Meetup.new(numParticipants:1000);
+m.welcome;
+m.isNil
+m.numberOfParticipants = 30000
+
+// Pseudo ugens: Ugens hiding the crazy insides of your patches
+
 
 /*****************************
 			NEXT TIME
