@@ -1,3 +1,12 @@
+### cycle
+```
+Quarks.install("https://github.com/yannics/cycle")
+```
+example:
+```
+Pbind(\degree, [1,2,3,4,1].kaprekar(5).pattern(inf, true, false), \dur, 3.euclidean(8, true).pattern(inf)/4).play;
+```
+
 ### Kenneth Flak was here
 Check out his company's website: https://www.roosnaflak.com
 
